@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create and download permanent static QR codes for URLs, email addresses, or text. No account required.">
+  <title>Permanent QR Code Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main class="generator" aria-labelledby="page-title">
+    <header>
+      <div class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h2v2h-2zM19 15h2v6h-6v-2"/></svg></div>
+      <span class="badge"><span aria-hidden="true"></span> STATIC · NO EXPIRY</span>
+      <h1 id="page-title">Permanent QR<br>Code Generator</h1>
+      <p class="intro">Your link. Your QR. Yours forever.<br>Create a scannable code in seconds.</p>
+    </header>
+    <form id="qr-form" novalidate>
+      <label for="qr-input">URL, email address, or text</label>
+      <textarea id="qr-input" name="content" rows="3" placeholder="https://example.com" required aria-describedby="input-help form-error" spellcheck="false"></textarea>
+      <p id="input-help" class="help">Your data is encoded directly and stays in your browser.</p>
+      <p id="form-error" class="error" role="alert" hidden></p>
+      <button class="button primary" type="submit">Generate QR code <span aria-hidden="true">↗</span></button>
+    </form>
+    <section id="qr-result" class="result" aria-labelledby="result-title" hidden>
+      <h2 id="result-title">Ready to scan</h2>
+      <div class="qr-frame"><div id="qrcode" role="img" aria-label="Generated QR code"></div></div>
+      <button id="download-button" class="button download" type="button">Download PNG <span aria-hidden="true">↓</span></button>
+      <p class="help">Static QR · High error correction · PNG</p>
+    </section>
+    <p id="status" class="sr-only" role="status" aria-live="polite"></p>
+    <footer>No sign-up. No subscriptions. No expiry.<small>The QR code never expires. Linked content must remain available.</small></footer>
+  </main>
+</body>
+</html>
